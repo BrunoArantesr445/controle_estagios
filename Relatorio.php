@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilinho.css">
     <title>Relatório de Alocações</title>
 </head>
 <body>
