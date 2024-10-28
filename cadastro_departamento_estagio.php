@@ -8,6 +8,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
     <title>Cadastro de Departamento de Estágio</title>
 </head>
 <body>
