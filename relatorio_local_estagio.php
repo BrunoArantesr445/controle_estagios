@@ -9,6 +9,7 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="estilinho.css">
     <title>Relatório de Local de Estágio</title>
 </head>
 <body>
