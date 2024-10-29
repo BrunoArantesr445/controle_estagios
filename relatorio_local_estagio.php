@@ -49,7 +49,7 @@
 
             echo "<tr>";
             echo "<td>" . $row['id'] . "</td>";
-            echo "<td>" . $local_nome. "</td>";
+            echo "<td>" . $row['local'] . "</td>";
             echo "<td>" . $row['departamento'] . "</td>";
             echo "<td>" . $row['limite_vagas'] . "</td>";
             echo "<td>" . $row['horario_disponivel'] . "</td>";

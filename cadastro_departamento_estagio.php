@@ -18,15 +18,17 @@
       
         <label for="nome">Local:</label>
         <select id="local" name="local" required>
-        <option value=""></option>
-            <?php          
+        <option value=""></option>         
+      <?php
+      include_once 'Local.php';
 
-            $local = new Local($db);
-            $stmt = $local->read();
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<option value='" . $row['nome'] . "'>" . $row['nome'] . "</option>";
-            }
-            ?>
+    
+      $local = new Local($db);
+      $stmt = $local->read();
+      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+          echo "<option value='" . $row['id'] . "'>" . $row['instituicao'] .  "</option>";
+      }
+      ?>
         </select><br><br>
 
         <label for="departamento">Nome do Departamento:</label>

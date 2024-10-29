@@ -9,7 +9,6 @@ class LocalDepartamento {
     public $limite_vagas;
     public $especialidade;
     public $horario_disponivel;
-    public $professor_id; 
     public $fase_estagio;
 
     public function __construct($db) {
@@ -18,14 +17,13 @@ class LocalDepartamento {
 
     public function create() {
         $query = "INSERT INTO " . $this->table . " SET local=:local, departamento=:departamento,limite_vagas=:limite_vagas,
-         horario_disponivel=:horario_disponivel, professor_id=:professor_id, especialidade=:especialidade, fase_estagio=:fase_estagio";
+         horario_disponivel=:horario_disponivel, especialidade=:especialidade, fase_estagio=:fase_estagio";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':local', $this->local);
         $stmt->bindParam(':departamento', $this->departamento);
         $stmt->bindParam(':limite_vagas', $this->limite_vagas);
         $stmt->bindParam(':horario_disponivel', $this->horario_disponivel);
-        $stmt->bindParam(':professor_id', $this->professor_id);
         $stmt->bindParam(':especialidade', $this->especialidade);
         $stmt->bindParam(':fase_estagio', $this->fase_estagio);
 
