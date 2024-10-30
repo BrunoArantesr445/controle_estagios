@@ -58,5 +58,16 @@ class Professor {
             return null; // Retorna null se não encontrar o professor
         }
     }
+
+
+     // Método para buscar alunos pelo nome
+     public function searchByName($nome) {
+        $query = "SELECT nome, disponibilidade_horario, especialidade, telefone, carga_horaria FROM " . $this->table . " WHERE nome LIKE :nome";
+        $stmt = $this->conn->prepare($query);
+        $nome = "%" . $nome . "%"; // Adiciona os curingas para busca parcial
+        $stmt->bindParam(':nome', $nome);
+        $stmt->execute();
+        return $stmt;
+    }
 }
 ?>

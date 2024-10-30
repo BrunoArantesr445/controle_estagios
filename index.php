@@ -14,7 +14,6 @@
             <li><a href="cadastro_local_estagio.php">Cadastro de Local de Estágio</a></li>
             <li><a href="cadastro_departamento_estagio.php">Cadastro de Departamento de Estágio</a></li>
             <li><a href="cadastro_alocacao.php">Cadastro de Alocação</a></li>
-            <li><a href="busca_aluno.php">Busca Aluno</a></li>
             </ul>  
             <hr>
             <ul>
@@ -23,6 +22,11 @@
             <li><a href="relatorio_local.php">Relatório de Local de Estágio</a></li>
             <li><a href="relatorio_local_estagio.php">Relatório de Departamento de Estágio</a></li>
             <li><a href="relatorio_alocacoes.php">Relatório de Alocações</a></li>
+        </ul>
+        <hr>
+            <ul>
+            <li><a href="busca_aluno.php">Busca Aluno</a></li>
+            <li><a href="busca_professor.php">Busca Professor</a></li>
         </ul>
     </nav>
 </body>
