@@ -14,7 +14,13 @@
             <th>ID</th>
             <th>Nome</th>
             <th>Disponibilidade de Horário</th>
-            <th>Fase do Estágio</th>
+            <th>Fase do estagio</th>
+            <th>Email</th>
+            <th>Telefone</th>
+            <th>cpf</th>
+            <th>Turma</th>
+            <th>Status</th>
+            <th>Carga Horaria</th>
         </tr>
         <?php
         include_once 'Database.php';
@@ -31,6 +37,12 @@
             echo "<td>" . $row['nome'] . "</td>";
             echo "<td>" . $row['disponibilidade_horario'] . "</td>";
             echo "<td>" . $row['fase_estagio'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td>" . $row['telefone'] . "</td>";
+            echo "<td>" . $row['cpf'] . "</td>";
+            echo "<td>" . $row['turma'] . "</td>";
+            echo "<td>" . $row['status'] . "</td>";
+            echo "<td>" . $row['carga_horaria'] . "</td>";
             echo "</tr>";
         }
         ?>

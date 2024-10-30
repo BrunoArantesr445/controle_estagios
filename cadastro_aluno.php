@@ -45,9 +45,29 @@ while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
     echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
 }
 ?>
-
-
         </select><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" required><br><br>
+
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required><br><br>
+
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required><br><br>
+
+
+        <label for="turma">Turma:</label>
+        <input type="text" id="turma" name="turma" required><br><br>
+
+
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" required><br><br>
+
+        <label for="carga_horaria">Carga Horaria:</label>
+        <input type="text" id="carga_horaria" name="carga_horaria" required><br><br>
+
 
         <input type="submit" value="Cadastrar">
     </form>
