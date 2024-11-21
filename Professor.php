@@ -7,18 +7,22 @@ class Professor {
     public $nome;
     public $disponibilidade_horario;
     public $especialidade;
+    public $telefone;
+    public $carga_horaria;
 
     public function __construct($db) {
         $this->conn = $db;
     }
 
     public function create() {
-        $query = "INSERT INTO " . $this->table . " SET nome=:nome, disponibilidade_horario=:disponibilidade_horario, especialidade=:especialidade";
+        $query = "INSERT INTO " . $this->table . " SET nome=:nome, disponibilidade_horario=:disponibilidade_horario, especialidade=:especialidade, telefone=:telefone, carga_horaria=:carga_horaria";
         $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':nome', $this->nome);
         $stmt->bindParam(':disponibilidade_horario', $this->disponibilidade_horario);
         $stmt->bindParam(':especialidade', $this->especialidade);
+        $stmt->bindParam(':telefone', $this->telefone);
+        $stmt->bindParam(':carga_horaria', $this->carga_horaria);
 
         if ($stmt->execute()) {
             return true;
