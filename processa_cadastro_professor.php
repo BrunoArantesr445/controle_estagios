@@ -10,6 +10,8 @@ $professor = new Professor($db);
 $professor->nome = $_POST['nome'];
 $professor->disponibilidade_horario = $_POST['disponibilidade_horario'];
 $professor->especialidade = $_POST['especialidade'];
+$professor->telefone = $_POST['telefone'];
+$professor->carga_horaria = $_POST['especialidade'];
 
 if ($professor->create()) {
     echo $msg = "Professor_cadastrado_com_sucesso.";   

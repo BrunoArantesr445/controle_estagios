@@ -14,6 +14,8 @@
             <th>Nome</th>
             <th>Disponibilidade de Horário</th>
             <th>Especialidade</th>
+            <th>Telefone</th>
+            <th>a Horaria</th>
         </tr>
         <?php
         include_once 'Database.php';
@@ -30,6 +32,8 @@
             echo "<td>" . $row['nome'] . "</td>";
             echo "<td>" . $row['disponibilidade_horario'] . "</td>";
             echo "<td>" . $row['especialidade'] . "</td>";
+            echo "<td>" . $row['telefone'] . "</td>";
+            echo "<td>" . $row['carga_horaria'] . "</td>";
             echo "</tr>";
         }
         ?>

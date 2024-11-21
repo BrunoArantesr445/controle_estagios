@@ -25,6 +25,13 @@
         <label for="especialidade">Especialidade:</label>
         <input type="text" id="especialidade" name="especialidade" required><br><br>
 
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required><br><br>
+
+        <label for="carga_horaria">Carga Horaria:</label>
+        <input type="text" id="carga_horaria" name="carga_horaria" required><br><br>
+
         <input type="submit" value="Cadastrar">
     </form>
     
