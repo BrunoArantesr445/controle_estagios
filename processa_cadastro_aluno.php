@@ -1,7 +1,5 @@
+
 <?php
-//print_r($_POST);
-
-
 include_once 'Database.php';
 include_once 'Aluno.php';
 
@@ -21,13 +19,12 @@ $aluno->status = $_POST['status'];
 $aluno->carga_horaria = $_POST['carga_horaria'];
 
 if ($aluno->create()) {
-    echo $msg = "Aluno_cadastrado_com_sucesso.";
-    header("location: index.php?txt=$msg");
-    exit(0);
+    $msg = "Aluno cadastrado com sucesso!";
+    header("location: cadastro_aluno.php?txt=" . urlencode($msg));
+    exit;
 } else {
-    echo $msg = "Não_foi_possível_cadastrar_o_aluno.";
-    header("location: index.php?txt=$msg");
-    exit(0);
+    $msg = "Não foi possível cadastrar o aluno. Verifique os dados e tente novamente.";
+    header("location: cadastro_aluno.php?txt=" . urlencode($msg));
+    exit;
 }
-
 ?>
