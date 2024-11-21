@@ -12,12 +12,12 @@ $alocacao->local = $_POST['local'];
 $alocacao->departamento = $_POST['departamento'];
 
 if ($alocacao->create()) {
-    $msg = "Alocacao_registrada_com_sucesso.";
-    header("location: index.php?txt=$msg");
-    exit(0);
+    $msg = "Alocação realizada com sucesso!";
+    header("location: cadastro_alocacao.php?txt=" . urlencode($msg));
+    exit;
 } else {
-    $msg = "Nao_foi_possível_registrar_a_alocacao.";
-    header("location: index.php?txt=$msg");
-    exit(0);
+    $msg = "Não foi possível realizar a alocação. Verifique os dados e tente novamente.";
+    header("location: cadastro_alocacao.php?txt=" . urlencode($msg));
+    exit;
 }
 ?>

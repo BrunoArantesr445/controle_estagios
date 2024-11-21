@@ -1,20 +1,31 @@
 <?php
-    include_once 'Database.php';
-    include_once 'Aluno.php';
-    include_once 'LocalDepartamento.php';
-    
-    $database = new Database();
-    $db = $database->getConnection();
+include_once 'Database.php';
+include_once 'Aluno.php';
+include_once 'LocalDepartamento.php';
+
+$database = new Database();
+$db = $database->getConnection();
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="estilo.css">
     <title>Cadastro de Alocação</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+        function exibirAlerta() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const msg = urlParams.get('txt');
+            if (msg) {
+                alert(msg);
+            }
+        }
+    </script>
 </head>
-<body>
+
+<body onload="exibirAlerta()">
     <a href="index.php">Voltar para o menu</a>
     <h1>Cadastro de Alocação</h1>
 
@@ -31,4 +42,5 @@
         <input type="submit" value="Alocar">
     </form>
 </body>
+
 </html>

@@ -5,7 +5,6 @@
     <title>Cadastro de Professor</title>
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <script>
-        // Exibe alerta com base no parâmetro 'txt' da URL
         function exibirAlerta() {
             const urlParams = new URLSearchParams(window.location.search);
             const msg = urlParams.get('txt');
