@@ -9,8 +9,16 @@
 <a href="index.php">Voltar para o menu</a>
     <h1>Cadastro de Local de Estágio</h1>
     <form action="processa_cadastro_local.php" method="post">
-        <label for="nome">Nome:</label>
+        <label for="nome">Instituição:</label>
         <input type="text" id="instituicao" name="instituicao" required><br><br>
+        <label for="nome">Especialidade:</label>
+        <input type="text" id="especialidade" name="especialidade" required><br><br>
+        <label for="nome">Departamento:</label>
+        <input type="text" id="departamento" name="departamento" required><br><br>
+        <label for="nome">Turno:</label>
+        <input type="text" id="turno" name="turno" required><br><br>
+        <label for="nome">Disponibilidade:</label>
+        <input type="text" id="disponibilidade" name="disponibilidade" required><br><br>
         <label for="especialidade">Observação:</label>
         <textarea id="observacao" name="observacao" rows="4" cols="50"></textarea>
         <br><br>

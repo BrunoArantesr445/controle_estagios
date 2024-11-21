@@ -4,7 +4,11 @@ class Local {
     private $table = 'local';
 
     public $id;
-    public $instituicao;  // Corrigido o nome da variável
+    public $instituicao;
+    public $especialidade;
+    public $departamento;
+    public $turno;
+    public $disponibilidade;
     public $observacao;
   
     public function __construct($db) {
@@ -12,11 +16,16 @@ class Local {
     }
 
     public function create() {
-        $query = "INSERT INTO " . $this->table . " SET instituicao=:instituicao, observacao=:observacao";
+        $query = "INSERT INTO " . $this->table . " SET instituicao=:instituicao, especialidade=:especialidade, departamento=:departamento, turno=:turno,
+        disponibilidade=:disponibilidade, observacao=:observacao";
         $stmt = $this->conn->prepare($query);
 
         // Atualizado o bind para ':instituicao' e a variável correta
         $stmt->bindParam(':instituicao', $this->instituicao);
+        $stmt->bindParam(':especialidade', $this->especialidade);
+        $stmt->bindParam(':departamento', $this->departamento);
+        $stmt->bindParam(':turno', $this->turno);
+        $stmt->bindParam(':disponibilidade', $this->disponibilidade);
         $stmt->bindParam(':observacao', $this->observacao);
 
         if ($stmt->execute()) {
@@ -49,6 +58,11 @@ class Local {
             // Atribuindo valores às propriedades do objeto
             $this->id = $row['id'];
             $this->instituicao = $row['instituicao'];
+            $this->especialidade = $row['especialidade'];
+            $this->departamento = $row['departamento'];
+            $this->turno = $row['turno'];
+            $this->disponibilidade = $row['disponibilidade'];
+            $this->observacao = $row['observacao'];
 
             return $row; // Retorna o array de dados
         } else {
