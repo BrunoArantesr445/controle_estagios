@@ -15,12 +15,12 @@ $professor->telefone = $_POST['telefone'];
 $professor->carga_horaria = $_POST['carga_horaria']; // Corrigido aqui para 'carga_horaria'
 
 if ($professor->create()) {
-    $msg = "Professor cadastrado com sucesso.";  // Mensagem de sucesso
-    header("Location: index.php?txt=" . urlencode($msg)); // Redireciona com a mensagem
-    exit(0);
+    $msg = "Supervisor cadastrado com sucesso!";
+    header("location: cadastro_professor.php?txt=" . urlencode($msg));
+    exit;
 } else {
-    $msg = "Não foi possível cadastrar o professor.";  // Mensagem de erro
-    header("Location: index.php?txt=" . urlencode($msg)); // Redireciona com a mensagem
-    exit(0);
+    $msg = "Não foi possível cadastrar o supervisor. Verifique os dados e tente novamente.";
+    header("location: cadastro_professor.php?txt=" . urlencode($msg));
+    exit;
 }
 ?>
