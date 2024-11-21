@@ -34,10 +34,10 @@ $fases = $fase->read();
 
         <label for="fase_estagio">Fase do Estágio:</label>
         <select id="fase_estagio" name="fase_estagio" required>
-            <option value="1ª Fase">UC4</option>
-            <option value="2ª Fase">UC7</option>
-            <option value="3ª Fase">UC10</option>
-            <option value="3ª Fase">UC17</option>
+            <option value="UC4">UC4</option>
+            <option value="UC7">UC7</option>
+            <option value="UC10">UC10</option>
+            <option value="UC17">UC17</option>
 
 <?php
             $fase = new Fase($db);
