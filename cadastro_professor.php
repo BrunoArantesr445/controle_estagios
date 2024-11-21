@@ -2,10 +2,20 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="estilo.css">
     <title>Cadastro de Professor</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <script>
+        // Exibe alerta com base no parâmetro 'txt' da URL
+        function exibirAlerta() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const msg = urlParams.get('txt');
+            if (msg) {
+                alert(msg);
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="exibirAlerta()">
 <a href="index.php">Voltar para o menu</a>
     <h1>Cadastro de Professor</h1>
     <form action="processa_cadastro_professor.php" method="post">
