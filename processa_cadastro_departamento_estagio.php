@@ -15,14 +15,17 @@ $local_estagio->horario_disponivel = $_POST['horario_disponivel'];
 $local_estagio->professor_id = $_POST['professor_id'];
 $local_estagio->fase_estagio = $_POST['fase_estagio'];
 
+// Verifique se o método create() está sendo chamado corretamente no objeto
 if ($local_estagio->create()) {
-    echo $msg ="Local_de_estagio_cadastrado_com_sucesso.";
-     header("location: index.php?txt=$msg");
-    exit(0);
+    $msg = "Departamento cadastrado com sucesso!";
+    // Redireciona e passa a mensagem via URL
+    header("Location: cadastro_departamento_estagio.php?txt=" . urlencode($msg));
+    exit();
 } else {
-    echo $msg ="Não_foi_possivel_cadastrar_o_local_de_estagio.";
-        header("location: index.php?txt=$msg");
-    exit(0);
+    $msg = "Não foi possível cadastrar o departamento. Verifique os dados e tente novamente.";
+    // Redireciona com a mensagem de erro
+    header("Location: cadastro_departamento_estagio.php?txt=" . urlencode($msg));
+    exit();
 }
 ?>
 

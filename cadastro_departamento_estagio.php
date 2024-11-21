@@ -1,17 +1,30 @@
 <?php
-    include_once 'Database.php';
-    $database = new Database();
-    $db = $database->getConnection();
-    include_once 'Local.php';
+include_once 'Database.php';
+$database = new Database();
+$db = $database->getConnection();
+include_once 'Local.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <title>Cadastro de Departamento de Estágio</title>
+    <script>
+        // Função para exibir alerta com base no parâmetro 'txt' da URL
+        function exibirAlerta() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const msg = urlParams.get('txt'); // Obtém a mensagem da URL
+
+            // Se a mensagem existir, exibe o alerta
+            if (msg) {
+                alert(decodeURIComponent(msg)); // Usa decodeURIComponent para garantir que a mensagem seja decodificada corretamente
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="exibirAlerta()">
 <a href="index.php">Voltar para o menu</a>
     <h1>Cadastro de Departamento de Estágio</h1>
     <form action="processa_cadastro_departamento_estagio.php" method="post">
@@ -19,16 +32,14 @@
         <label for="nome">Local:</label>
         <select id="local" name="local" required>
         <option value=""></option>         
-      <?php
-      include_once 'Local.php';
-
-    
-      $local = new Local($db);
-      $stmt = $local->read();
-      while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-          echo "<option value='" . $row['id'] . "'>" . $row['instituicao'] .  "</option>";
-      }
-      ?>
+        <?php
+        include_once 'Local.php';
+        $local = new Local($db);
+        $stmt = $local->read();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . $row['id'] . "'>" . $row['instituicao'] .  "</option>";
+        }
+        ?>
         </select><br><br>
 
         <label for="departamento">Nome do Departamento:</label>
@@ -50,7 +61,6 @@
             <option value="Tarde e Noite">Tarde e Noite</option>
         </select><br><br>
 
-
         <label for="fase_estagio">Fase do Estágio:</label>
         <select id="fase_estagio" name="fase_estagio" required>
         <option value=""></option>
@@ -60,27 +70,20 @@
             <option value="UC17">UC17</option>
         </select><br><br>
 
-
         <label for="professor_id">Professor Responsável:</label>
         <select id="professor_id" name="professor_id" required>
         <option value=""></option>
-            <?php
-            include_once 'Professor.php';
-
-          
-            $professor = new Professor($db);
-            $stmt = $professor->read();
-            while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                echo "<option value='" . $row['id'] . "'>" . $row['nome'] . " - " . $row['especialidade'] . "</option>";
-            }
-            ?>
+        <?php
+        include_once 'Professor.php';
+        $professor = new Professor($db);
+        $stmt = $professor->read();
+        while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+            echo "<option value='" . $row['id'] . "'>" . $row['nome'] . " - " . $row['especialidade'] . "</option>";
+        }
+        ?>
         </select><br><br>
-
-     
-       
 
         <input type="submit" value="Cadastrar">
     </form>
-  
 </body>
 </html>

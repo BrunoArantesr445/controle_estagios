@@ -4,8 +4,18 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="estilo.css">
     <title>Cadastro de Local de Estágio</title>
+    <script>
+        // Exibe alerta com base no parâmetro 'txt' da URL
+        function exibirAlerta() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const msg = urlParams.get('txt');
+            if (msg) {
+                alert(msg);
+            }
+        }
+    </script>
 </head>
-<body>
+<body onload="exibirAlerta()">
 <a href="index.php">Voltar para o menu</a>
     <h1>Cadastro de Local de Estágio</h1>
     <form action="processa_cadastro_local.php" method="post">
