@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="estilinho.css">
-    <title>Relatório de Professor</title>
+    <title>Relatório Local de Estágio</title>
 </head>
 <body>
 <a href="index.php">Voltar para o menu</a>
